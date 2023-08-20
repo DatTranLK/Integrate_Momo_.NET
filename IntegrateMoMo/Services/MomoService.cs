@@ -55,12 +55,14 @@ namespace IntegrateMoMo.Services
             var orderInfo = collection.First(s => s.Key == "orderInfo").Value;
             var orderId = collection.First(s => s.Key == "orderId").Value;
             var errorStatusCode = collection.First(s => s.Key == "errorCode").Value;
+            var localMessage = collection.First(s => s.Key == "localMessage").Value;
             return new MomoExecuteResponseModel
             {
                 Amount = amount,
                 OrderId = orderId,
                 OrderInfo = orderInfo,
-                ErrorCode = int.Parse(errorStatusCode)
+                ErrorCode = int.Parse(errorStatusCode),
+                LocalMessage = localMessage
             };
 
         }
